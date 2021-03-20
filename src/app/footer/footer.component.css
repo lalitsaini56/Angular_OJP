@@ -1,0 +1,18 @@
+footer {
+  width: 100%;
+  background: #3c312e;
+  display: fixed;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+  footer div {
+      padding: 10px;
+      color: white;
+      text-align: center;
+  }
+
+  footer a {
+      color: white;
+  }

@@ -1,0 +1,79 @@
+<form>
+  <div *ngIf="showLoader" class="loader">
+    <img src="https://esourcing.icicibank.com/img/Preloader.gif">
+  </div>
+  <app-header></app-header>
+  <div class="maindiv-container">
+    <div class="content-container">
+      <div class="wrapper">
+        <div id="divDefault" runat="server">
+          <div class="upload-btn-wrapper header-icon"  *ngIf="!showLoader">
+            <input type="image" id="IbtnImporIBtntExcel" title="Import Excel Sheet"
+              class="img-btn" src="assets/Images/excelimport.png">
+            <input type="file" name="flpExcel" id="flpExcel" (change)="UploadFile($event)">
+          </div>
+          <div class="header-icon">
+            <input type="image" name="IBtnAdd" id="IBtnAdd" title="Add Employee" class="img-btn"
+              src="assets/Images/NewUser.png" (click)="AddEmployee()">
+          </div>
+        </div>
+        <div class="grid-container">
+          <div id="divSearchEmployee">
+            <div class="search-container">
+              <input type="text" class="form-control" #txtEmpID placeholder="Search by EmployeeId">
+              <div class="btn-search">
+                <input type="image" name="btnSearchEmployee" (click)="SearchEmployee(txtEmpID.value)" class="img-btn"
+                  src="assets/Images/search-logo.png">
+              </div>
+            </div>
+          </div>
+          <div>
+            <table ID="grdEmployee">
+              <th>Employee Id</th>
+              <th>Last Modified User</th>
+              <th>Last Modified Date</th>
+              <th>Exception Status</th>
+              <th>Remarks</th>
+              <tbody>
+                <tr *ngFor="let employee of employees">
+                  <td>{{employee.EmpID}}</td>
+                  <td>{{employee.ModifiedUserName}}</td>
+                  <td>{{employee.ModifiedDate}}</td>
+                  <td><label class="switch">
+                      <input type="checkbox" ID="chkExcepStatus" [checked]=employee.Status
+                        (change)="OnChangeStatus(employee.EmpID, $event)" />
+                      <span class="slider round"></span>
+                    </label></td>
+                  <td>
+                    <input type="image" src="assets/Images/remarks-cloud.png" (click)="DisplayRemarks(employee)"
+                      class="img-btn">
+                  </td>
+                </tr>
+              </tbody>
+
+            </table>
+            <div class="pagging">
+              <div *ngFor="let page of pages" class="page-style">
+                <button (click)="onPageChange($event)">{{page}}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+
+  <app-add-employee [IsNewEmployee]="IsNewEmployee" [ChangedStatus]="ChangedStatus" [UpdatedEmpID]="updatedEmpID"
+    (IsDisplayAddEmployee)="CloseAddEmployeeModel($event)" (getexceptionEmployee)="getexceptionEmployee('',1)"
+    *ngIf="IsDisplayAddEmployee">
+  </app-add-employee>
+
+  <app-remarks (IsDisplayRemarks)="CloseRemarksModel($event)" [RemarkEmpID]="RemarkEmpID" *ngIf="IsDisplayRemarks">
+  </app-remarks>
+  <app-bulk-upload [ExcelResponse]="ExcelResponse" (IsDisplayExcelResult)="CloseExcelModel($event)"
+      *ngIf="IsDisplayExcelResult">
+  </app-bulk-upload>
+
+</form>

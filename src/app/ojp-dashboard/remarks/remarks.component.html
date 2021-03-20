@@ -1,0 +1,24 @@
+<div class="my-model">
+  <div id="modalBody" class="my-modal-dialog">
+    <div class="my-modal-content">
+      <div class="my-modal-header">
+        <h4>Remarks - Piyush</h4>
+        <button type="button" class="btn-close" (click)="CloseRemarksModel()">x</button>
+      </div>
+      <div class="my-modal-body">
+
+        <div class="timeline">
+          <label class="title">Previous Remarks </label>
+          <ul>
+            <li *ngFor="let data of Remarks"><span></span>
+              <div>
+                <div class="info">{{data.Comments}}</div>
+                <div class="type">by  {{data.Name}}  {{data.ModifiedDate}} </div>
+              </div> <span class="number"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

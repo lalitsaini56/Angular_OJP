@@ -1,0 +1,50 @@
+header {
+  height: 15vh;
+  z-index:1;
+  width:100%
+}
+
+.header-container {
+  display: flex;
+}
+
+.header-logo {
+  width: 95%;
+}
+
+.btn-logout {
+  /*width:5%;*/
+  align-self: center;
+  border: 2px solid #c74c21;
+  padding: 3px 3px;
+  border-radius: 3px;
+}
+
+#iBtnLogout {
+  margin-bottom: -3px;
+}
+
+.logo-bottom {
+  width: 100%;
+  height: 3vh;
+  background-image: url("../../assets/Images/menumid.gif");
+  background-repeat: repeat-x;
+  justify-content: space-around;
+  background-position: center;
+  background-size: cover;
+}
+
+  .logo-bottom a {
+      display: flex;
+      justify-content: flex-end;
+      align-content: center;
+      color: white;
+      font-weight: bold;
+      padding-right: 10px;
+  }
+
+  .img-btn {
+    height: 25px;
+    width: 25px;
+    outline: none;
+  }

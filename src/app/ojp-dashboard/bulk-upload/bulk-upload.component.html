@@ -1,0 +1,31 @@
+<div class="my-model" id="divNewEmployeeDetails">
+  <div id="modalBody" class="my-modal-dialog">
+    <div class="my-modal-content">
+      <div class="my-modal-header">
+        <h4>Employee Details</h4>
+        <button type="button" class="btn-close" (click)="CloseExcelModel()">x</button>
+      </div>
+      <div class="my-modal-body">
+
+        <table ID="excelResult">
+          <th>EmployeeID</th>
+          <th>Status</th>
+
+          <tbody>
+            <tr *ngFor="let employee of NotExitEmployees">
+              <td>{{employee}}</td>
+              <td>Employee Not Exists in Database</td>
+            </tr>
+
+            <tr *ngFor="let employee of AlreadyActiveEmployees">
+              <td>{{employee}}</td>
+              <td>Employee is already present in Database</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

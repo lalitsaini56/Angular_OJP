@@ -1,0 +1,278 @@
+
+
+.maindiv-container {
+  height:78vh;
+  width:100%;
+  background-image: url("../../../assets/Images/ICICI-Bnk_ED.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.wrapper {
+  width: 90%;
+}
+
+.upload-btn-wrapper {
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+}
+
+  .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+  }
+
+
+#divDefault {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.header-icon {
+  background: white;
+  padding: 5px;
+  border: 2px solid #6aa5c4;
+  margin-left: 8px;
+  border-radius: 5px;
+}
+
+.img-btn {
+  height: 25px;
+  width: 25px;
+  outline: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 245px auto;
+}
+
+#divSearchEmployee {
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.search-container {
+  background: white;
+  padding: 2%;
+  width: 100%;
+  display: flex;
+  border: 3px solid #6aa5c4;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.btn-search {
+  border: 1px solid #ced4da;
+  background: white;
+  border-radius: .25rem;
+  display: flex;
+  height: calc(1.5em + .75rem);
+  align-items: center;
+  margin-left: 2px;
+}
+
+#btnSerachEmployee {
+  align-self: center;
+  margin-left: 5px;
+}
+
+#grdEmployee {
+  background: white;
+  margin: 5px;
+  border: 3px solid #6aa5c4;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#grdEmployee th {
+  background: #c1dcf9;
+  padding: 10px;
+  color: #477faa;
+  border:1px solid #6aa5c4
+}
+
+  #grdEmployee th + th {
+      text-align: center;
+  }
+
+#grdEmployee td {
+  padding-top: 8px;
+  padding-left: 10px;
+  border:1px solid #6aa5c4
+}
+
+  #grdEmployee td + td {
+      text-align: center;
+      padding-left: 0px;
+  }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+  .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f50707;
+  -webkit-transition: .4s;
+  transition: .4s;
+  height: 34px;
+}
+
+  .slider:before {
+      position: absolute;
+      content: "";
+      height: 30px;
+      width: 30px;
+      left: 2px;
+      top: 2px;
+      /*bottom: 5px;*/
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+  }
+
+input:checked + .slider {
+  background-color: #46d846;
+}
+
+  input:checked + .slider:before {
+      transform: translateX(26px);
+  }
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+  .slider.round:before {
+      border-radius: 34px;
+  }
+
+  .pagging{
+    padding: 10px 0px;
+  }
+
+  .page-style {
+    display: inline;
+   }
+
+
+     .page-style button {
+         padding: 10px;
+         border: 1px solid #fff;
+         border-radius: 5px;
+         font-size: 14px;
+         font-weight: bold;
+         margin: 5px;
+         color: #477faa;
+         background: white;
+         border: 1px solid #6aa5c4;
+     }
+
+         .page-style button:hover {
+             background: #6aa5c4;
+             color: white;
+         }
+
+          .loader{
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background-color: rgba(0,0,0,0.5);
+          display: flex;
+          justify-content: center;
+          height: 100%;
+          align-items: center;
+         }
+
+  @media (max-width : 765px) {
+
+
+    .maindiv-container {
+      max-width: 100%;
+        height: 100vh;
+    }
+    .wrapper {
+      width: 97%;
+  }
+
+    .grid-container {
+        grid-template-rows: 38px auto;
+    }
+
+        .grid-container > div {
+            margin: 0;
+            grid-column-start: 1;
+            grid-column-end: -1;
+            margin-top: 3px;
+        }
+
+    #divSearchEmployee {
+        margin: 0;
+        grid-column-start: 1;
+        grid-column-end: -1;
+    }
+
+
+    .search-container {
+        background: transparent;
+        padding: 0%;
+        border: 0;
+        border-radius: 0;
+    }
+
+
+    #btnSerachEmployee {
+        border-width: 0px;
+        padding-top: 2px;
+        height: 2.1rem;
+        align-self: stretch;
+    }
+
+
+    #grdEmployee {
+        margin: 1px;
+    }
+
+        #grdEmployee th {
+            width: 4%;
+            padding: 2px;
+            text-align: center;
+        }
+
+        #grdEmployee td {
+            width: 4%;
+            padding-left: 0px;
+            text-align: center;
+        }
+}
+
+

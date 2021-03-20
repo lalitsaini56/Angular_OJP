@@ -1,0 +1,45 @@
+
+ <div class="my-model" id="divNewEmployeeDetails">
+  <div id="modalBody" class="my-modal-dialog">
+    <div class="my-modal-content">
+      <div class="my-modal-header">
+        <h4>Employee Details</h4>
+        <button type="button" class="btn-close" (click)="CloseAddEmployeeModel()">x</button>
+      </div>
+      <div class="my-modal-body">
+        <div class="my-modal-row" *ngIf="IsDisplayEmpID">
+          <input type="text" class="form-control" placeholder="Enter Employee Id" (focusout)="GetEmployeeDetails($event)">
+        </div>
+
+          <table cellspacing="0" rules="all" border="1" id="empBasicDetail" style="border-collapse:collapse;" *ngIf="IsDisplayEmpDetails">
+            <tr>
+              <td>Employee ID</td>
+              <td>{{NewEmpID}}</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>{{employee.EmployeeName}}</td>
+            </tr>
+            <tr>
+              <td>Grade</td>
+              <td>{{employee.Grade}}</td>
+            </tr>
+          </table>
+
+          <div *ngIf="IsDisplayRemaks">
+          <div class="my-modal-row m-2">
+            Remarks
+          </div>
+          <div class="my-modal-row">
+            <textarea name="txtRemarks" #txtRemarks rows="2" cols="20" id="txtRemarks" class="form-control"
+              placeholder="please enter remarks"></textarea>
+          </div>
+
+        <div class="my-modal-row justify-right">
+          <input type="submit" name="btnAddEmployee" value={{btnText}} id="btnAddEmployee" class="btn btn-success" (click)="SaveEmployeeDetails(txtRemarks.value)" />
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

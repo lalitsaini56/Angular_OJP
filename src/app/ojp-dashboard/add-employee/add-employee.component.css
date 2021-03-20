@@ -1,0 +1,23 @@
+
+#empBasicDetail {
+  background: white;
+  margin: 5px;
+  border: 1px solid #0000000f;
+  border-radius: 10px;
+  width: 100%;
+}
+
+  #empBasicDetail tr {
+      padding: 10px;
+  }
+
+      #empBasicDetail tr td {
+          padding: 5px;
+          width:40%;
+      }
+
+      #empBasicDetail tr td+td {
+        width:60%;
+    }
+
+
